@@ -1,0 +1,269 @@
+.banner-section {
+  background: #eef0f3;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.banner-content {
+  padding-right: 40px;
+}
+
+.brand-text {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.banner-title {
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 700;
+  color: #162554;
+}
+
+.banner-title span {
+  font-weight: 400;
+}
+
+.banner-btn {
+  margin-top: 40px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 16px 40px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #7b4dff, #5f2fff);
+  box-shadow: 0 12px 25px rgba(98, 70, 255, 0.35);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.banner-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 30px rgba(98, 70, 255, 0.45);
+}
+
+/* ===== SLIDER ===== */
+.main-slider {
+  text-align: center;
+}
+
+.main-image {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+}
+
+/* ===== THUMBNAILS ===== */
+.thumb-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.thumb-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.active-thumb {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+  padding: 10px;
+} 
+.banner-slider-right img,
+.main-image,
+.slick-slide img {
+  outline: none !important;
+  border: none !important;
+}
+
+.slick-slide,
+.slick-slide div,
+.slick-track,
+.slick-list {
+  outline: none !important;
+}
+
+.slick-slide:focus,
+.slick-slide div:focus,
+.slick-slide img:focus,
+.main-image:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+ 
+ 
+@media (max-width: 1024px) {
+  .banner-title {
+    font-size: 56px;
+  }
+
+  .banner-content {
+    padding-right: 20px;
+  }
+
+  .main-image {
+    max-height: 320px;
+  }
+
+  .thumb-box {
+    width: 70px;
+    height: 70px;
+  }
+
+  .thumb-image {
+    width: 40px;
+    height: 40px;
+  }
+}
+ 
+@media (max-width: 768px) {
+  .banner-section {
+    padding: 40px 0;
+  }
+
+  .banner-title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .banner-content {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .banner-btn {
+    padding: 14px 32px;
+    font-size: 14px;
+    margin-top: 25px;
+  }
+
+  .main-image {
+    max-height: 280px;
+  }
+
+  .thumb-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .thumb-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .thumb-wrapper .d-flex {
+    gap: 12px !important;
+  }
+
+  .active-thumb {
+    transform: scale(1.05);
+    padding: 8px;
+  }
+}
+
+/* ✅ Mobile Large (max-width: 576px) */
+@media (max-width: 576px) {
+  .banner-section {
+    padding: 30px 0;
+  }
+
+  .banner-title {
+    font-size: 30px; 
+    padding: 20px;
+    letter-spacing: 2px;
+  }
+
+  
+
+  .banner-btn {
+    padding: 12px 24px;
+    font-size: 13px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+
+  .main-image {
+    max-height: 220px;
+    padding: 0 10px !important;
+  }
+
+  .thumb-box {
+    width: 50px;
+    height: 50px;
+  }
+
+  .thumb-image {
+    width: 28px;
+    height: 28px;
+  }
+
+  .thumb-wrapper .d-flex {
+    gap: 8px !important;
+  }
+
+  .active-thumb {
+    transform: scale(1.08);
+    padding: 5px;
+  }
+
+  .px-5 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .pt-5 {
+    padding-top: 10px !important;
+  }
+
+  .pb-3 {
+    padding-bottom: 8px !important;
+  }
+
+  .banner-content {
+    margin-bottom: 20px;
+  }
+}
+ 
+@media (max-width: 400px) {
+  .banner-title {
+    font-size: 35px;
+    padding: 30px 0px;
+  }
+
+  .banner-btn {
+    padding: 10px 18px;
+    font-size: 11px;
+  }
+
+  .main-image {
+    max-height: 180px;
+  }
+
+  .thumb-box {
+    width: 40px;
+    height: 40px;
+  }
+
+  .thumb-image {
+    width: 22px;
+    height: 22px;
+  }
+ 
+  .active-thumb {
+    transform: scale(1.05);
+    padding: 4px;
+  }
+}

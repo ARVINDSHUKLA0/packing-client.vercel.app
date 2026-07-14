@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 907.09 708.66">
+  <g>
+    <rect x=".5" y="283.96" width="225.77" height="424.2" style="fill: #fff;"/>
+    <path d="M225.77,284.46v423.2H1v-423.2h224.77M226.77,283.46H0v425.2h226.77v-425.2h0Z"/>
+  </g>
+  <g id="Front">
+    <path id="Front-2" data-name="Front" d="M452.54,284.46v423.2h-224.77v-423.2h224.77M453.54,283.46h-226.77v425.2h226.77v-425.2h0Z"/>
+  </g>
+  <g id="left">
+    <path id="left-2" data-name="left" d="M679.31,284.46v423.2h-224.77v-423.2h224.77M680.31,283.46h-226.77v425.2h226.77v-425.2h0Z"/>
+  </g>
+  <g id="back">
+    <path id="back-2" data-name="back" d="M906.09,284.46v423.2h-224.77v-423.2h224.77M907.09,283.46h-226.77v425.2h226.77v-425.2h0Z"/>
+  </g>
+  <g>
+    <rect x="227.27" y="57.19" width="225.77" height="225.77" style="fill: #fff;"/>
+    <path d="M452.54,57.69v224.77h-224.77V57.69h224.77M453.54,56.69h-226.77v226.77h226.77V56.69h0Z"/>
+  </g>
+  <g>
+    <rect x="227.27" y=".5" width="225.77" height="55.69" style="fill: #fff;"/>
+    <path d="M452.54,1v54.69h-224.77V1h224.77M453.54,0h-226.77v56.69h226.77V0h0Z"/>
+  </g>
+  <g>
+    <rect x=".5" y="184.75" width="225.77" height="98.21" style="fill: #fff;"/>
+    <path d="M225.77,185.25v97.21H1v-97.21h224.77M226.77,184.25H0v99.21h226.77v-99.21h0Z"/>
+  </g>
+  <g>
+    <rect x="454.04" y="184.75" width="225.77" height="98.21" style="fill: #fff;"/>
+    <path d="M679.31,185.25v97.21h-224.77v-97.21h224.77M680.31,184.25h-226.77v99.21h226.77v-99.21h0Z"/>
+  </g>
+</svg>

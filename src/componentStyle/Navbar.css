@@ -1,0 +1,175 @@
+.custom-bg{
+    background-color: #ECF0F3;
+}
+.dropdwon-postion {
+    position: absolute;
+    left: -20%;
+    top: 113%;
+    width: 160px;
+    padding: 15px; 
+    background-color: #EFF2F5;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.02);
+    z-index: 9999 !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+
+.dropdown-open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+}
+.fa-caret-down{
+    transition: transform 0.3s ease;
+}
+
+.rotate-icon{
+    transform: rotate(180deg);
+}
+
+.dropdown-icon {
+    transition: transform 0.4s ease;
+}
+
+.custom-hover-menu:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.user-menu {
+    cursor: pointer;
+}
+
+.dropdown-menu-custom {
+    position: absolute;
+    top: 113%;
+    right: 0;
+    background: #fff;
+    min-width: 100px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+.user-menu:hover .dropdown-menu-custom {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.display-hide {
+    display: none;
+}
+
+.custom-display {
+    display: flex;
+}
+
+@media screen and (min-width: 0px) and (max-width: 525px) {
+    .display-hide {
+        display: block;
+    }
+
+    .custom-display {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 526px) and (max-width: 768px) {
+    .display-hide {
+        display: block;
+    }
+
+    .custom-display {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    .display-hide {
+        display: block;
+    }
+
+    .custom-display {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .display-hide {
+        display: block;
+    }
+
+    .custom-display {
+        display: block;
+    }
+}
+
+
+.close-menu {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .custom-display {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        z-index: 9999;
+        padding: 20px !important;
+        transition: all 0.4s ease;
+        flex-direction: column;
+        overflow-y: auto;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-menu-active {
+        left: 0;
+    }
+
+    .close-menu {
+        display: block;
+        text-align: right;
+        font-size: 24px;
+        cursor: pointer;
+        margin-bottom: 15px;
+    }
+
+    .display-hide {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .dropdwon-postion {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        left: 0;
+        top: 0;
+
+        max-height: 0;
+        overflow: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+        padding: 0 15px;
+
+        transition: all .3s ease;
+    }
+
+    .dropdown-open {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+        padding: 15px;
+    }
+}

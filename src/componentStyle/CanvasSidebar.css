@@ -1,0 +1,305 @@
+.canvas-sidebar {
+  width: auto;
+  height: 100vh;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px 12px;
+  scrollbar-width: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  box-sizing: border-box; 
+}
+ 
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #2563eb;
+  cursor: pointer;
+  width: 100%;
+}
+
+.sidebar-config-icon {
+  color: #2563eb;
+}
+
+.sidebar-config-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.sidebar-divider {
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 14px 0 18px 0;
+}
+ 
+.sidebar-items {   
+  width: 100%; 
+  background-color: #eef0fb;
+  border-radius: 18px;
+  padding: 10px;
+}
+
+.sidebar-item span {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.sidebar-item:hover {
+  background: #f3f4f63c;
+  color: #111827;
+}
+
+.sidebar-item.active {
+  background: #eff6ff59;
+  color: #2563eb;
+}
+
+.sidebar-item.active svg {
+  color: #2563eb;
+}
+ 
+.config-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+.config-card {
+  background: #eef0fb;
+  border-radius: 16px;
+  padding: 4px 18px;
+}
+
+.config-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #dfe1f2;
+}
+
+.config-card .config-row:last-child {
+  border-bottom: none;
+}
+
+.config-label {
+  font-size: 14.5px;
+  color: #6b6f8a;
+  font-weight: 500;
+}
+
+.config-sub {
+  font-size: 13px;
+  color: #9498b3;
+  font-weight: 400;
+}
+
+.config-value {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1f2240;
+}
+
+.config-add-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px dashed #6d5fd8;
+  background: transparent;
+  color: #6d5fd8;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.config-add-btn:hover {
+  background: #e3e0fb;
+}
+
+.ink-swatch-wrapper {
+  position: relative;
+  width: 34px;
+  height: 34px;
+}
+
+.ink-swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #00000010;
+  pointer-events: none;
+}
+
+.ink-color-input {
+  position: absolute;
+  inset: 0;
+  width: 34px;
+  height: 34px;
+  opacity: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* ===== Add Text panel (sidebar) ===== */
+
+.text-add-panel {
+  margin: 8px 0 16px;
+  padding: 12px;
+  border: 1px solid #e6e6f0;
+  border-radius: 10px;
+  background: #fafaff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(109, 95, 216, 0.06);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.text-add-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3a3a4a;
+}
+
+.text-add-close {
+  border: none;
+  background: transparent;
+  color: #8a8aa3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.text-add-close:hover {
+  background: #eeeef8;
+  color: #3a3a4a;
+}
+
+.text-add-hint {
+  font-size: 12px;
+  color: #a15c00;
+  background: #fff6e5;
+  border: 1px solid #ffe4a3;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.text-add-textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 64px;
+  border: 1px solid #dcdce8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #2b2b38;
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.text-add-textarea:focus {
+  border-color: #6d5fd8;
+  box-shadow: 0 0 0 3px rgba(109, 95, 216, 0.12);
+}
+
+/* Narrow sidebar (col-lg-2) -> Size aur Color ko stack karo, ek row me na thoko */
+.text-add-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.text-add-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6a6a80;
+  width: 100%;
+}
+
+.text-add-control input[type="range"] {
+  flex: 1;
+  min-width: 0;
+  accent-color: #6d5fd8;
+}
+
+.text-add-size-value {
+  min-width: 34px;
+  text-align: right;
+  color: #3a3a4a;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.text-add-control-color {
+  justify-content: space-between;
+}
+
+.ink-swatch-wrapper-sm {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.ink-swatch-sm {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+}
+
+.text-add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 8px;
+  background: #6d5fd8;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  width: 100%;
+}
+
+.text-add-btn:hover:not(:disabled) {
+  background: #5c4fc4;
+}
+
+.text-add-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

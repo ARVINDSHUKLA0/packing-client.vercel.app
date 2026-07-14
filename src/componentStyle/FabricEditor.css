@@ -1,0 +1,54 @@
+.editor {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.editor-svg-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none !important; /* ज़रूरी: ताकि क्लिक कैनवास तक पहुँचे */
+}
+
+.editor-svg-layer svg {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.editor-fabric-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: auto !important;
+}
+.editor {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.editor-svg-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* ज़रूरी: ताकि क्लिक कैनवास तक पहुँचे */
+}
+
+.editor-svg-layer svg {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.editor-fabric-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: auto !important;
+}
