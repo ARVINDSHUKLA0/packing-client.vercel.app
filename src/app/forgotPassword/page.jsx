@@ -1,16 +1,21 @@
 "use client";
 
-import React, { useState } from 'react';
-import './forgotPassword.css';
-import Link from 'next/link';
-import axios from 'axios';
+import React, { useState } from "react";
+import "./forgotPassword.css";
+import Link from "next/link";
+import axios from "axios";
 
 const Page = () => {
-
     const [email, setEmail] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        setLoading(true);
+
+        console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+        console.log("Email:", email);
 
         try {
             const response = await axios.post(
@@ -18,12 +23,27 @@ const Page = () => {
                 { email }
             );
 
-            console.log(response.data);
+            console.log("Status:", response.status);
+            console.log("Response:", response.data);
+
             alert(response.data.message);
 
         } catch (error) {
-            console.log(error.response?.data);
-            alert(error.response?.data?.message || "Something went wrong");
+
+            console.log("=========== ERROR ===========");
+            console.log("Status:", error.response?.status);
+            console.log("Response:", error.response?.data);
+            console.log("Message:", error.message);
+            console.log(error);
+
+            alert(
+                error.response?.data?.message ||
+                error.message ||
+                "Something went wrong"
+            );
+
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -40,10 +60,14 @@ const Page = () => {
                         width={220}
                         className="img-fluid"
                     />
-                    <h2 className="mt-3 fw-bold">Forgot Password</h2>
+
+                    <h2 className="mt-3 fw-bold">
+                        Forgot Password
+                    </h2>
                 </div>
 
                 <form onSubmit={handleSubmit}>
+
                     <div className="mb-4">
                         <label className="form-label">
                             Email Address
@@ -55,14 +79,16 @@ const Page = () => {
                             placeholder="Enter Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
                     </div>
 
                     <button
                         type="submit"
                         className="btn custom-btn px-5 py-2"
+                        disabled={loading}
                     >
-                        Send Reset Link
+                        {loading ? "Sending..." : "Send Reset Link"}
                     </button>
 
                     <Link
@@ -71,6 +97,7 @@ const Page = () => {
                     >
                         Back to Login
                     </Link>
+
                 </form>
             </div>
         </section>
