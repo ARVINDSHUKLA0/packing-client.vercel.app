@@ -113,8 +113,6 @@
 
 
 
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -138,17 +136,18 @@ const Page = () => {
                 { email }
             );
 
-            // ✅ Success — top pe toast
+            // ✅ Success
             Swal.fire({
                 icon: "success",
-                title: message,
+                title: response.data.message || "Reset link sent successfully",
                 confirmButtonText: "OK",
-                confirmButtonColor: "#6366f1", // aapke screenshot jaisa purple/blue
+                confirmButtonColor: "#6366f1",
                 customClass: {
                     popup: "custom-swal-popup",
                     title: "custom-swal-title",
                 },
-            })
+            });
+
             setEmail(""); // input clear kar do
 
         } catch (error) {
@@ -156,11 +155,16 @@ const Page = () => {
             console.log("=========== ERROR ===========");
             console.log(error);
 
-            // ❌ Error — center pe alert
+            const errorMessage =
+                error.response?.data?.message ||
+                error.message ||
+                "Something went wrong";
+
+            // ❌ Error
             Swal.fire({
                 icon: "error",
                 title: "Failed",
-                text: message,
+                text: errorMessage,
                 confirmButtonColor: "#dc2626",
             });
 
