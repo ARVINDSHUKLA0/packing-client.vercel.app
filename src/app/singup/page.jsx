@@ -5,8 +5,9 @@ import Link from 'next/link'
 import axios from 'axios'
 import './singup.css'
 import Swal from "sweetalert2";
-
+import { useRouter } from "next/navigation";
 const Page = () => {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -41,7 +42,19 @@ const Page = () => {
                 }
             );
 
-            await Swal.fire({
+            // await Swal.fire({
+            //     position: "top-end",
+            //     icon: "success",
+            //     title: "Signup Successful",
+            //     text: "Please check your email and verify your account.",
+            //     showConfirmButton: false,
+            //     timer: 1000,
+            //     timerProgressBar: true,
+            // });
+            // router.push("/login");
+
+
+            Swal.fire({
                 position: "top-end",
                 icon: "success",
                 title: "Signup Successful",
@@ -49,6 +62,8 @@ const Page = () => {
                 showConfirmButton: false,
                 timer: 1000,
                 timerProgressBar: true,
+            }).then(() => {
+                router.push("/login");
             });
 
         } catch (error) {
