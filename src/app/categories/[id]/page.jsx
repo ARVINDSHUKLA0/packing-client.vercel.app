@@ -4,14 +4,20 @@ import Link from "next/link";
 export default async function CategoryPage({ params }) {
     const { id } = await params;
 
-   console.log(process.env.NEXT_PUBLIC_API_URL);
+console.log("API:", process.env.NEXT_PUBLIC_API_URL);
 
-const res = await fetch(
+ const res = await fetch(
   `${process.env.NEXT_PUBLIC_API_URL}/api/product/category/${id}`,
   {
     cache: "no-store",
   }
 );
+
+if (!res.ok) {
+  throw new Error("Failed to fetch products");
+}
+
+const data = await res.json();
 
 console.log(res.status);
 
