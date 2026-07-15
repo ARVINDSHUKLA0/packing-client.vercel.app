@@ -141,15 +141,14 @@ const Page = () => {
             // ✅ Success — top pe toast
             Swal.fire({
                 icon: "success",
-                title: "Success",
-                text: response.data.message,
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-            });
-
+                title: message,
+                confirmButtonText: "OK",
+                confirmButtonColor: "#6366f1", // aapke screenshot jaisa purple/blue
+                customClass: {
+                    popup: "custom-swal-popup",
+                    title: "custom-swal-title",
+                },
+            })
             setEmail(""); // input clear kar do
 
         } catch (error) {
@@ -161,10 +160,8 @@ const Page = () => {
             Swal.fire({
                 icon: "error",
                 title: "Failed",
-                text:
-                    error.response?.data?.message ||
-                    error.message ||
-                    "Something went wrong",
+                text: message,
+                confirmButtonColor: "#dc2626",
             });
 
         } finally {
