@@ -137,15 +137,23 @@ const Page = () => {
             );
 
             // ✅ Success
+            // Swal.fire({
+            //     icon: "success",
+            //     title: response.data.message || "Reset link sent successfully",
+            //     confirmButtonText: "OK",
+            //     confirmButtonColor: "#6366f1",
+            //     customClass: {
+            //         popup: "custom-swal-popup",
+            //         title: "custom-swal-title",
+            //     },
+            // });
+
             Swal.fire({
+                position: "top-end",
                 icon: "success",
                 title: response.data.message || "Reset link sent successfully",
-                confirmButtonText: "OK",
-                confirmButtonColor: "#6366f1",
-                customClass: {
-                    popup: "custom-swal-popup",
-                    title: "custom-swal-title",
-                },
+                showConfirmButton: false,
+                timer: 1500
             });
 
             setEmail(""); // input clear kar do
@@ -161,12 +169,23 @@ const Page = () => {
                 "Something went wrong";
 
             // ❌ Error
-            Swal.fire({
+            // Swal.fire({
+            //     icon: "error",
+            //     title: "Failed",
+            //     text: errorMessage,
+            //     confirmButtonColor: "#dc2626",
+            // });
+
+              Swal.fire({
+                position: "top-end",
                 icon: "error",
                 title: "Failed",
+                showConfirmButton: false,
+                timer: 1500,
                 text: errorMessage,
                 confirmButtonColor: "#dc2626",
             });
+
 
         } finally {
             setLoading(false);
