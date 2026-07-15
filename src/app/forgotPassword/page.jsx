@@ -130,33 +130,85 @@ const Page = () => {
 
         setLoading(true);
 
+        // try {
+        //     const response = await axios.post(
+        //         `${process.env.NEXT_PUBLIC_API_URL}/api/auth/forgot-password`,
+        //         { email }
+        //     );
+
+        //     // ✅ Success
+        //     // Swal.fire({
+        //     //     icon: "success",
+        //     //     title: response.data.message || "Reset link sent successfully",
+        //     //     confirmButtonText: "OK",
+        //     //     confirmButtonColor: "#6366f1",
+        //     //     customClass: {
+        //     //         popup: "custom-swal-popup",
+        //     //         title: "custom-swal-title",
+        //     //     },
+        //     // });
+
+        //     Swal.fire({
+        //         position: "top-end",
+        //         icon: "success",
+        //         title: response.data.message || "Reset link sent successfully",
+        //         showConfirmButton: false,
+        //         timer: 1500
+        //     });
+
+        //     setEmail(""); // input clear kar do
+
+        // } catch (error) {
+
+        //     console.log("=========== ERROR ===========");
+        //     console.log(error);
+
+        //     const errorMessage =
+        //         error.response?.data?.message ||
+        //         error.message ||
+        //         "Something went wrong";
+
+        //     // ❌ Error
+        //     // Swal.fire({
+        //     //     icon: "error",
+        //     //     title: "Failed",
+        //     //     text: errorMessage,
+        //     //     confirmButtonColor: "#dc2626",
+        //     // });
+
+        //       Swal.fire({
+        //         position: "top-end",
+        //         icon: "error",
+        //         title: "Failed",
+        //         showConfirmButton: false,
+        //         timer: 1500,
+        //         text: errorMessage,
+        //         confirmButtonColor: "#dc2626",
+        //     });
+
+
+        // } finally {
+        //     setLoading(false);
+        // }
+
         try {
             const response = await axios.post(
                 `${process.env.NEXT_PUBLIC_API_URL}/api/auth/forgot-password`,
                 { email }
             );
 
-            // ✅ Success
-            // Swal.fire({
-            //     icon: "success",
-            //     title: response.data.message || "Reset link sent successfully",
-            //     confirmButtonText: "OK",
-            //     confirmButtonColor: "#6366f1",
-            //     customClass: {
-            //         popup: "custom-swal-popup",
-            //         title: "custom-swal-title",
-            //     },
-            // });
-
+            // ✅ Success — chhota toast, top-right
             Swal.fire({
+                toast: true,
                 position: "top-end",
                 icon: "success",
                 title: response.data.message || "Reset link sent successfully",
                 showConfirmButton: false,
-                timer: 1500
+                timer: 2500,
+                timerProgressBar: true,
             });
 
-            setEmail(""); // input clear kar do
+            setEmail("");
 
         } catch (error) {
 
@@ -168,24 +220,16 @@ const Page = () => {
                 error.message ||
                 "Something went wrong";
 
-            // ❌ Error
-            // Swal.fire({
-            //     icon: "error",
-            //     title: "Failed",
-            //     text: errorMessage,
-            //     confirmButtonColor: "#dc2626",
-            // });
-
-              Swal.fire({
+            // ❌ Error — chhota toast, top-right
+            Swal.fire({
+                toast: true,
                 position: "top-end",
                 icon: "error",
-                title: "Failed",
+                title: errorMessage,
                 showConfirmButton: false,
-                timer: 1500,
-                text: errorMessage,
-                confirmButtonColor: "#dc2626",
+                timer: 2500,
+                timerProgressBar: true,
             });
-
 
         } finally {
             setLoading(false);
