@@ -23,12 +23,20 @@ import * as THREE from "three";
   object ki WORLD position automatically preserve karta hai — chahe
   kitni bhi nesting ho, position kabhi galat calculate nahi hoga.
 */
+// export const FLAP_HINGES = [
+//   { meshName: "top", hingeEdge: "z-min", axis: "x", openDeg: -100, closeDeg: 0 },
+//   { meshName: "lock", hingeEdge: "z-min", axis: "x", openDeg: 100, closeDeg: 0 },
+//   { meshName: "right", hingeEdge: "z-min", axis: "y", openDeg: 90, closeDeg: 0 },
+//   { meshName: "left", hingeEdge: "z-min", axis: "y", openDeg: -90, closeDeg: 0 },
+//   { meshName: "back", hingeEdge: "x-max", axis: "y", openDeg: 90, closeDeg: 0, parent: "right" },
+// ];
+
 export const FLAP_HINGES = [
-  { meshName: "top", hingeEdge: "z-min", axis: "x", openDeg: -100, closeDeg: 0 },
-  { meshName: "lock", hingeEdge: "z-min", axis: "x", openDeg: 100, closeDeg: 0 },
-  { meshName: "right", hingeEdge: "z-min", axis: "y", openDeg: 90, closeDeg: 0 },
-  { meshName: "left", hingeEdge: "z-min", axis: "y", openDeg: -90, closeDeg: 0 },
-  { meshName: "back", hingeEdge: "x-max", axis: "y", openDeg: 90, closeDeg: 0, parent: "right" },
+  { meshName: "top",   hingeEdge: "y-min", axis: "x", openDeg: -100, closeDeg: 0 },
+  { meshName: "lock",  hingeEdge: "y-min", axis: "x", openDeg: 100,  closeDeg: 0 },
+  { meshName: "right", hingeEdge: "y-min", axis: "z", openDeg: 90,   closeDeg: 0 },
+  { meshName: "left",  hingeEdge: "y-min", axis: "z", openDeg: -90,  closeDeg: 0 },
+  { meshName: "back",  hingeEdge: "x-max", axis: "z", openDeg: 90,   closeDeg: 0, parent: "right" },
 ];
 
 const pivotCache = new WeakMap();
